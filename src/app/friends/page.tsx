@@ -3,6 +3,7 @@ import type { JSX } from "react";
 import CardWrapper from "@/components/CardWrapper";
 import { Icons } from "@/components/Icons";
 import { IoCopyOutline } from "react-icons/io5";
+import InviteFriendModal from "@/components/InviteFriendModal";
 
 interface T_InviteFriendCard {
   title: string;
@@ -58,12 +59,14 @@ export default function Home() {
           />
         </CardWrapper>
         <CardWrapper className="py-4">
-          <span className="w-full text-center text-xs text-white">You haven't invited anyone yet</span>
+          <span className="w-full text-center text-xs text-white">
+            You haven't invited anyone yet
+          </span>
         </CardWrapper>
       </div>
-      <div className="w-fill flex justify-between absolute left-0 bottom-[85px] gap-2">
-        <div className="flex-1"></div>
-        <div className="w-11 h-11 flex justify-center items-center rounded-full bg-border">
+      <div className="absolute bottom-[85px] w-[92%] mx-auto flex justify-between gap-2">
+        <InviteFriendModal />
+        <div className="!w-11 !h-11 flex justify-center items-center rounded-full bg-border">
           <IoCopyOutline className="w-5 h-5 text-black" />
         </div>
       </div>

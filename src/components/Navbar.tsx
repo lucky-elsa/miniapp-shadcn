@@ -56,7 +56,7 @@ export const Navbar = () => {
   }, [pathname, updateActiveState]);
 
   return (
-    <div className="absolute z-10 bottom-5 w-[92%] mx-auto h-[55px] flex justify-between p-[3px] rounded-xl border border-border cursor-pointer gap-2 bg-black/70 bg-backdrop-filter">
+    <div className="absolute bottom-5 w-[92%] mx-auto h-[55px] flex justify-between p-[3px] rounded-xl border border-border cursor-pointer gap-2 bg-black/70 bg-backdrop-filter">
       {route.map((item, index) => (
         <div
           key={index}
