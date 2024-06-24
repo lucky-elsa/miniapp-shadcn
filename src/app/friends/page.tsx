@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-4">
       <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="relative z-10 w-full flex flex-col items-center py-2 gap-1">
+      <div className="relative z-10 w-full flex flex-col items-center py-2 gap-1 animate-opacity-scale">
         <h1 className="text-maintext text-2xl">Invite Friends</h1>
         <span className="text-white text-sm">
           You can your friend will receive bonuses.

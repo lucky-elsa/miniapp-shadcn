@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 99%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -90,4 +90,19 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes opacityScale {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-opacity-scale {
+  animation: opacityScale 1s;
 }

@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <div className="fixed top-0 left-0 bg-black/40 w-full min-h-screen"></div>
-      <div className="relative z-10 w-full flex flex-col items-center pt-3 pb-20 gap-1 text-white">
+      <div className="relative z-10 w-full flex flex-col items-center pt-3 pb-20 gap-1 text-white animate-opacity-scale">
         <CardWrapper className="p-3">
           <div className="relative w-full">
             <Input

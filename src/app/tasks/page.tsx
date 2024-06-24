@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="flex relative min-h-screen flex-col items-center justify-between p-4">
       <div className="fixed top-0 left-0 bg-black/40 w-full min-h-screen"></div>
-      <div className="relative z-10 w-full flex flex-col items-center pt-3 pb-20 gap-1 text-white">
+      <div className="relative z-10 w-full flex flex-col items-center pt-3 pb-20 gap-1 text-white animate-opacity-scale">
         <div className="w-[90px] mx-auto flex justify-around items-center">
           <Icons.tasks.coin />
           <p className="text-4xl font-semibold">0</p>
