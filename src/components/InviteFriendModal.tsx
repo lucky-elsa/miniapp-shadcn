@@ -11,7 +11,7 @@ import { AiOutlineReddit } from "react-icons/ai";
 import { IoClose, IoCopyOutline } from "react-icons/io5";
 
 const InviteFriendModal = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenChange = () => {
     setIsOpen((prevState) => !prevState);

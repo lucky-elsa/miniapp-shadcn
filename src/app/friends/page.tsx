@@ -33,8 +33,8 @@ const InviteFriendCard: React.FC<T_InviteFriendCard> = (props) => {
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-4 bg-[url('/background.jpg')] bg-cover  !bg-black/30">
-      <div className="absolute inset-0 bg-black opacity-30"></div>
+    <div className="flex min-h-screen flex-col items-center justify-between p-4">
+      <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="relative z-10 w-full flex flex-col items-center py-2 gap-1">
         <h1 className="text-maintext text-2xl">Invite Friends</h1>
         <span className="text-white text-sm">
@@ -64,7 +64,7 @@ export default function Home() {
           </span>
         </CardWrapper>
       </div>
-      <div className="absolute bottom-[85px] w-[92%] mx-auto flex justify-between gap-2">
+      <div className="absolute bottom-[90px] w-[92%] mx-auto flex justify-between gap-2">
         <InviteFriendModal />
         <div className="!w-11 !h-11 flex justify-center items-center rounded-full bg-border">
           <IoCopyOutline className="w-5 h-5 text-black" />
