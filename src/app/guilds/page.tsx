@@ -41,6 +41,17 @@ const GuildCard = ({
 export default function Home() {
   const [search, setSearch] = useState<string>("");
 
+  const guilds = [
+    { title: "GuildUnion", amount: "2.6B", users: "36K", img: "/channel (1).jpg" },
+    { title: "NIGERIA", amount: "1B", users: "18K", img: "/channel (2).jpg" },
+    { title: "What Not Crypto 🔋", amount: "464M", users: "6.6K", img: "/channel (3).jpg" },
+    { title: "KamE LAHAT AY PILIPINO❗", amount: "280M", users: "2.2K", img: "/channel (4).jpg" },
+    { title: "GARUDA", amount: "141M", users: "2K", img: "/channel (5).jpg" },
+    { title: "Los Spartans🏹", amount: "139M", users: "1.1K", img: "/channel (6).jpg" },
+    { title: "Ukraine", amount: "137M", users: "1.3K", img: "/channel (7).jpg" },
+    { title: "Hamster Kombat Daily Combo Cards", amount: "59M", users: "903", img: "/channel (8).jpg" },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4">
       <div className="fixed top-0 left-0 bg-black/40 w-full min-h-screen"></div>
@@ -58,57 +69,17 @@ export default function Home() {
             <GoSearch className="absolute right-3 top-3 w-5 h-5 text-border" />
           </div>
           <span className="text-xs text-white text-center px-2 mt-1">
-            Search for the Guild by Telegram channel @name to join, or create a
-            new one if it doesn&apos;t exist.
+            Search for the Guild by Telegram channel @name to join, or create a new one if it doesn&apos;t exist.
           </span>
         </CardWrapper>
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="GuildUnion" amount="2.6B" users="36K">
-            <img src="/channel (1).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="NIGERIA" amount="1B" users="18K">
-            <img src="/channel (2).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="What Not Crypto 🔋" amount="464M" users="6.6K">
-            <img src="/channel (3).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="KamE LAHAT AY PILIPINO❗" amount="280M" users="2.2K">
-            <img src="/channel (4).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="GARUDA" amount="141M" users="2K">
-            <img src="/channel (5).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="Los Spartans🏹" amount="139M" users="1.1K">
-            <img src="/channel (6).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="Ukraine" amount="137M" users="1.3K">
-            <img src="/channel (7).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
-
-        <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">
-          <GuildCard title="Hamster Kombat Daily Combo Cards" amount="59M" users="903">
-            <img src="/channel (8).jpg" className="w-full h-full rounded-lg" />
-          </GuildCard>
-        </CardWrapper>
+        
+        {guilds.map((guild, index) => (
+          <CardWrapper key={index} className="bg-[#1d4c52] border border-[#19565d] mb-2">
+            <GuildCard title={guild.title} amount={guild.amount} users={guild.users}>
+              <img src={guild.img} className="w-full h-full rounded-lg" />
+            </GuildCard>
+          </CardWrapper>
+        ))}
       </div>
       <Navbar />
     </main>

@@ -42,6 +42,40 @@ const TaskCard = ({
   );
 };
 
+const tasks = [
+  { type: "Daily Tasks", items: [
+    { title: "Daily Reward", amount: 295000, icon: <TbCalendarCheck className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Like and RT a Daily Post", amount: 1000, icon: <FaXTwitter className="w-6 h-6 text-[#88dde7]" /> },
+  ]},
+  { type: "Invites", items: [
+    { title: "Invite a Friend", amount: 5000, icon: <TbUserShare className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Invite a Friend with Premium Telegram", amount: 25000, icon: <TbUserStar className="w-6 h-6 text-[#88dde7]" /> },
+  ]},
+  { type: "One-time Tasks", items: [
+    { title: "Follow Telegram Channel", amount: 2000, icon: <LiaTelegram className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Join Discord Server", amount: 2000, icon: <AiOutlineDiscord className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Follow on Twitter", amount: 2000, icon: <FaXTwitter className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Follow on TikTok", amount: 2000, icon: <TbBrandTiktok className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Subscribe on YouTube", amount: 2000, icon: <TbBrandYoutube className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Follow on Instagram", amount: 2000, icon: <TbBrandInstagram className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Like and RT an Announcement", amount: 1000, icon: <FaXTwitter className="w-6 h-6 text-[#88dde7]" /> },
+    { title: "Visit Our Website", amount: 500, icon: <TbExternalLink className="w-6 h-6 text-[#88dde7]" /> },
+  ]}
+];
+
+const TaskList = ({ type, items }: { type: string, items: { title: string, amount: number, icon: ReactNode }[] }) => (
+  <>
+    <p className="text-lg text-start w-full">{type}</p>
+    {items.map((task, index) => (
+      <CardWrapper key={index} className="mb-2">
+        <TaskCard title={task.title} amount={task.amount}>
+          {task.icon}
+        </TaskCard>
+      </CardWrapper>
+    ))}
+  </>
+);
+
 export default function Home() {
   return (
     <div className="flex relative min-h-screen flex-col items-center justify-between p-4">
@@ -52,78 +86,12 @@ export default function Home() {
           <p className="text-4xl font-semibold">0</p>
         </div>
         <h1 className="text-maintext text-2xl mt-2">Your Tasks</h1>
-        <span className="text-white text-sm">
-          Comlete the tasks to earn more coins.
-        </span>
+        <span className="text-white text-sm">Complete the tasks to earn more coins.</span>
         <div className="border-t-[1px] border-maintext w-full my-3"></div>
-        <p className="text-lg text-start w-full">Daily Tasks</p>
-        <CardWrapper className="mb-2 animate-scale animate-scaleDown">
-          <TaskCard title="Daily Reward" amount={295000}>
-            <TbCalendarCheck className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Like and RT a Daily Post" amount={1000}>
-            <FaXTwitter className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-
-        <p className="text-lg text-start w-full">Invites</p>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Invite a Friend" amount={5000}>
-            <TbUserShare className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard
-            title="Invite a Friend with Premium Telegram"
-            amount={25000}
-          >
-            <TbUserStar className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-
-        <p className="text-lg text-start w-full">One-time Tasks</p>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Follow Telegram Channel" amount={2000}>
-            <LiaTelegram className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Join Discord Server" amount={2000}>
-            <AiOutlineDiscord className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Follow on Twitter" amount={2000}>
-            <FaXTwitter className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Follow on TikTok" amount={2000}>
-            <TbBrandTiktok className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Subscribe on YouTube" amount={2000}>
-            <TbBrandYoutube className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Follow on Instagram" amount={2000}>
-            <TbBrandInstagram className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Like and RT and Ammouncement" amount={1000}>
-            <FaXTwitter className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
-        <CardWrapper className="mb-2">
-          <TaskCard title="Visit Our Website" amount={500}>
-            <TbExternalLink className="w-6 h-6 text-[#88dde7]" />
-          </TaskCard>
-        </CardWrapper>
+        
+        {tasks.map((taskGroup, index) => (
+          <TaskList key={index} type={taskGroup.type} items={taskGroup.items} />
+        ))}
       </div>
       <Navbar />
     </div>
