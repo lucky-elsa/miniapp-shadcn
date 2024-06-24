@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           <span className="text-xs text-white text-center px-2 mt-1">
             Search for the Guild by Telegram channel @name to join, or create a
-            new one if it doesn't exist.
+            new one if it doesn&apos;t exist.
           </span>
         </CardWrapper>
         <CardWrapper className="bg-[#1d4c52] border border-[#19565d] mb-2">

@@ -60,7 +60,7 @@ export default function Home() {
         </CardWrapper>
         <CardWrapper className="py-4">
           <span className="w-full text-center text-xs text-white">
-            You haven't invited anyone yet
+            You haven&apos;t invited anyone yet
           </span>
         </CardWrapper>
       </div>
